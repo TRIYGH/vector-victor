@@ -68,6 +68,13 @@ def vector_mean(*vectors):
     return zip_the_list
 
 
+def magnitude(vector):
+    zip_the_list = [x**2 for x in vector]
+    print(sum(zip_the_list))
+    return (sum(zip_the_list)**0.5)
+
+
+
 m = [3, 4]
 n = [5, 0]
 
@@ -80,7 +87,9 @@ z = [0, 0, 0]
 a = [1,2,3]
 b=[3,3,3]
 
-print(vector_mean(v,w,u)[0])
+print(magnitude(v))
+
+#print(vector_mean(v,w,u)[0])
 
 class ShapeError(Exception):
     pass

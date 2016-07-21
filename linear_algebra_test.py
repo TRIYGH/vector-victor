@@ -4,9 +4,9 @@ from linear_algebra import *
 from nose.tools import raises
 
 
-# def are_equal(x, y, tolerance=0.001):
-#     """Helper function to compare floats, which are often not quite equal."""
-#     return abs(x - y) <= tolerance
+def are_equal(x, y, tolerance=0.001):
+    """Helper function to compare floats, which are often not quite equal."""
+    return abs(x - y) <= tolerance
 
 
 m = [3, 4]
@@ -115,26 +115,13 @@ def test_vector_mean():
     assert are_equal(vector_mean(v, w, u)[1], 2)
     assert are_equal(vector_mean(v, w, u)[2], 5 / 3)
 
-#
-# def test_magnitude():
-#     """
-#     magnitude([a b])  = sqrt(a^2 + b^2)
-#     magnitude(Vector) = Scalar
-#     """
-#     assert magnitude(m) == 5
-#     assert magnitude(v) == math.sqrt(10)
-#     assert magnitude(y) == math.sqrt(1400)
-#     assert magnitude(z) == 0
-#
-#
-# A = [[1, 0, 0],
-#      [0, 1, 0],
-#      [0, 0, 1]]
-# B = [[1, 2, 3],
-#      [4, 5, 6],
-#      [7, 8, 9]]
-# C = [[1, 2],
-#      [2, 1],
-#      [1, 2]]
-# D = [[1, 2, 3],
-#      [3, 2, 1]]
+
+def test_magnitude():
+    """
+    magnitude([a b])  = sqrt(a^2 + b^2)
+    magnitude(Vector) = Scalar
+    """
+    assert magnitude(m) == 5
+    assert are_equal(magnitude(v), math.sqrt(10))
+    assert are_equal(magnitude(y), math.sqrt(1400))
+    assert magnitude(z) == 0
