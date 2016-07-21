@@ -34,10 +34,8 @@ def vector_sum(*lists):
     else:
         raise ShapeError
 
+
 #ANSWER  ==  return len(set([shape(item) for item in args])) == 1
-
-
-
 def vector_size_equal(*vectors):
     temp_str = ""
     for each in vectors:
