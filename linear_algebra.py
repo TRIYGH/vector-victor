@@ -49,6 +49,23 @@ def vector_size_equal(*vectors):
     return True
 
 
+def dot(a,b):
+    if vector_size_equal(a,b):
+        zip_the_list = [x*y for x,y in zip(a,b)]
+        total = sum(zip_the_list)
+        return total
+    else:
+        raise ShapeError
+
+
+def vector_multiply(vector, num):
+    zip_the_list = [x * num for x in vector]
+    return zip_the_list
+
+
+def vector_mean(*vectors):
+    zip_the_list = [sum(args)/len(args) for args in zip(*vectors)]
+    return zip_the_list
 
 
 m = [3, 4]
@@ -60,8 +77,10 @@ u = [1, 1, 1]
 y = [10, 20, 30]
 z = [0, 0, 0]
 
+a = [1,2,3]
+b=[3,3,3]
 
-
+print(vector_mean(v,w,u)[0])
 
 class ShapeError(Exception):
     pass

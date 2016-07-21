@@ -78,43 +78,43 @@ def test_vector_sum_checks_shapes():
 def diff_lengths():
     assert vector_size_equal(v,w,m,y) == True
 
-#
-# def test_dot():
-#     """
-#     dot([a b], [c d])   = a * c + b * d
-#     dot(Vector, Vector) = Scalar
-#     """
-#     assert dot(w, y) == 160
-#     assert dot(m, n) == 15
-#     assert dot(u, z) == 0
-#
-#
-# @raises(ShapeError)
-# def test_dot_checks_shapes():
-#     """Shape rule: the vectors must be the same size."""
-#     dot(v, m)
-#
-#
-# def test_vector_multiply():
-#     """
-#     [a b]  *  Z     = [a*Z b*Z]
-#     Vector * Scalar = Vector
-#     """
-#     assert vector_multiply(v, 0.5) == [0.5, 1.5, 0]
-#     assert vector_multiply(m, 2) == [6, 8]
-#
-#
-# def test_vector_mean():
-#     """
-#     mean([a b], [c d]) = [mean(a, c) mean(b, d)]
-#     mean(Vector)       = Vector
-#     """
-#     assert vector_mean(m, n) == [4, 2]
-#     assert vector_mean(v, w) == [0.5, 2.5, 2]
-#     assert are_equal(vector_mean(v, w, u)[0], 2 / 3)
-#     assert are_equal(vector_mean(v, w, u)[1], 2)
-#     assert are_equal(vector_mean(v, w, u)[2], 5 / 3)
-#
+
+def test_dot():
+    """
+    dot([a b], [c d])   = a * c + b * d
+    dot(Vector, Vector) = Scalar
+    """
+    assert dot(w, y) == 160
+    assert dot(m, n) == 15
+    assert dot(u, z) == 0
+
+
+@raises(ShapeError)
+def test_dot_checks_shapes():
+    """Shape rule: the vectors must be the same size."""
+    dot(v, m)
+
+
+def test_vector_multiply():
+    """
+    [a b]  *  Z     = [a*Z b*Z]
+    Vector * Scalar = Vector
+    """
+    assert vector_multiply(v, 0.5) == [0.5, 1.5, 0]
+    assert vector_multiply(m, 2) == [6, 8]
+
+
+def test_vector_mean():
+    """
+    mean([a b], [c d]) = [mean(a, c) mean(b, d)]
+    mean(Vector)       = Vector
+    """
+    assert vector_mean(m, n) == [4, 2]
+    assert vector_mean(v, w) == [0.5, 2.5, 2]
+    assert are_equal(vector_mean(v, w, u)[0], 2 / 3)
+    assert are_equal(vector_mean(v, w, u)[1], 2)
+    assert are_equal(vector_mean(v, w, u)[2], 5 / 3)
+
 #
 # def test_magnitude():
 #     """
